@@ -1,5 +1,7 @@
 **Integration and Testing on Local Docker Engine:**
 
+Export the api-key with: `export $(xargs < .env)`
+
 1.  **Build the Docker Image:**
 
     Open a terminal, navigate to the `perplexity-sonar-app` directory, and run the following command:
