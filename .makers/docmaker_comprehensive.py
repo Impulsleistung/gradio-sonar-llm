@@ -17,7 +17,7 @@ def get_file_structure(repo_path):
         structure += f"{indent}{os.path.basename(root)}/\n" if dirs else ""
         sub_indent = " " * 4 * (level + 1)
         for f in files:
-            # Exclude files starting with '.' and 'docmaker.py'
+            # Exclude files starting with '.' and 'docmaker_comprehensive.py'
             if not f.startswith(".") and f != "docmaker_comprehensive.py":
                 structure += f"{sub_indent}{f}\n"
     return structure
@@ -31,7 +31,7 @@ def get_code_content(repo_path):
         dirs[:] = [d for d in dirs if not d.startswith(".")]
 
         for file in files:
-            # Exclude files starting with '.' and 'docmaker.py'
+            # Exclude files starting with '.' and 'docmaker_comprehensive.py'
             if (
                 file.endswith(".py")
                 and not file.startswith(".")
