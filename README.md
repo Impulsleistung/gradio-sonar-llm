@@ -28,3 +28,8 @@ Export the api-key with: `export $(xargs < .env)`
 4.  **Test the Application:**
 
     Enter a prompt in the text box and click "Submit." The application will send the prompt to the Perplexity API and display the response.
+
+## The Docmaker
+
+The call goes like `python docmaker_mmd.py > mmd_chart.txt`.
+This file cannot exist together with `docmaker_comprehensive.py > document.txt`.

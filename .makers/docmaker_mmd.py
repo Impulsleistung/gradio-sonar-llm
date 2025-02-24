@@ -1,9 +1,7 @@
 import os
-
 import requests
 
 PERPLEXITY_API_TOKEN = os.getenv("PERPLEXITY_API_TOKEN")
-
 GITHUB_REPO_PATH = "."  # Assuming the script is run from the root of the repo
 
 
@@ -20,7 +18,7 @@ def get_file_structure(repo_path):
         sub_indent = " " * 4 * (level + 1)
         for f in files:
             # Exclude files starting with '.' and 'docmaker.py'
-            if not f.startswith(".") and f != "docmaker.py":
+            if not f.startswith(".") and f != "docmaker_mmd.py":
                 structure += f"{sub_indent}{f}\n"
     return structure
 
@@ -37,7 +35,7 @@ def get_code_content(repo_path):
             if (
                 file.endswith(".py")
                 and not file.startswith(".")
-                and file != "docmaker.py"
+                and file != "docmaker_mmd.py"
             ):
                 filepath = os.path.join(root, file)
                 with open(filepath, "r") as f:
